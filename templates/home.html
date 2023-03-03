@@ -7,13 +7,24 @@
     <title>Flask Rest Api</title>
 </head>
 <body>
-    <h1>Hello </h1>
+    <h1>People with Their Notes</h1>
     <ul>
         {% for person in people %}
-        <li>
-            {{person.fname}}  {{person.lname}}
-        </li>
+       <h2>            {{person.fname}}  {{person.lname}} 
+            {{person.timestamp}}
+        </h2>
+
+        <ul>
+            {% for note in person.notes %}
+            <li>
+                {{note.content}}
+            </li>
+            {% endfor %}
+        </ul>
+
+
         {% endfor %}
+
     </ul>
 </body>
 </html>
